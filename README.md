@@ -9,7 +9,8 @@ DirectMolecules.py and ImputedMolecules.py show the effect of increasing the num
 DirectDescriptors.py and ImputedDescriptors.py show the effect of increasing the number of descriptors used during training on the Direct and Imputed models, respectively; this is what is shown in Figure 4a of the paper.
 
 
-List of files:
+**List of files:**
+
 *mol_utils.py:* script with supporting utilities used by other scripts.
 
 *Direct Molecules.py:* DirectMolecules.py shows the effect of increasing the number of training molecules on the Direct models.  Generates findings of Figure 3a of paper.
