@@ -92,6 +92,7 @@ Syy2 = Syy/np.linalg.norm(Syy,axis=1)[:,np.newaxis]
 modelX2 = Reg(cv=10,max_iter=1e4,fit_intercept=False)
 ThetaX2 = modelX2.fit(Sxx2.T,Syy2.T).coef_
 
+#Load the Dravnieks and Dream predictions
 Predictions = []
 Pred_mols = []
 PredY = []
