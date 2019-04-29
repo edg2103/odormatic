@@ -5,8 +5,13 @@ import pickle; import numpy as np; import matplotlib.pyplot as plt;
 
 codepath = '/Users/Elkin.Gutierrez/Desktop/code/'
 DRM_words = pickle.load(open(codepath+'DRM_words.dump'))['DRM_words']
+
+#arrange the labels in the order contained in the ratings data
 labels = [DRM_words[i] for i in np.array([10, 16, 11, 4, 12, 17, 8, 14, 19 , 21, 7, 13, 5, 20, 3, 9, 15, 18, 6])-3]
+
+
 def format_fn(tick_val, tick_pos):
+    # function to return labels of descriptors included in list
     if int(tick_val)<len(labels):
         return labels[int(tick_val)]
     else:
@@ -16,6 +21,7 @@ key = ['Semantics']
 linestyles = ['solid','dashed','--','dotted']
 import scipy.stats as stats
 linestyles = ['solid','dashed','--','dotted']
+
 fig, ax = plt.subplots()
 mediansZscores = pickle.load(open(codepath+'factor_analysis_results_non_overlap2_plus_mean_FT0.dump'))['mediansZscores'];
 keys1 = sorted(mediansZscores['Semantics'].keys())
