@@ -86,6 +86,7 @@ mols = mols + mols2
 # Initialize MultiTask Elastic Net with cross-validation for setting parameter weights 
 Reg = lm.MultiTaskElasticNetCV #MultiTaskElasticNetCV #cross.PLSCanonical #cross.PLSRegression
 
+# Normalize semantic vector matrices
 Sxx = copy.copy(Sx)
 Syy = copy.copy(Sy)
 Sxx_mean = np.mean(Sxx.T,0)
@@ -99,12 +100,6 @@ Syy2 = Syy/np.linalg.norm(Syy,axis=1)[:,np.newaxis]
 modelX2 = Reg(cv=10,max_iter=1e4,fit_intercept=False)
 ThetaX2 = modelX2.fit(Sxx2.T,Syy2.T).coef_
 
-#lambd = [0,0.1,0.25,0.5,0.75,1.0,1.5,2.0,4.0]
-#lambd = [1]
-#SAE = sae.SemanticAutoEnc
-#clf = mod_sel.GridSearchCV(SAE(), [{'lambd':lambd}], cv=10,
-#                   scoring='neg_mean_squared_error')
-#clf.fit(Px2.T, Sxx2)
 
 # Create dicts to store the results
 medians={} #store median correlations across molecules
@@ -160,7 +155,8 @@ for key in ['Semantics2','Half2']:#,'Both150','Both200']:
     medians[key][test_size].append(np.median(corrs[key][test_size]))
     mediansPvals[key][test_size].append(np.median([mu.nanreplace(corrstats.dependent_corr(jj,0,0,hat[i,:].size,twotailed=False)[1],diff=jj) 
                                        for jj in corrs[key][test_size]]))
-  # Generate predictions for Perceptual model (they are the same in this case are there are no training ratings)
+
+# Generate predictions for Perceptual model (they are the same in this case are there are no training ratings)
 for key in ['Perceptual']:
   hat = np.zeros((Py2.shape[1]))
   corrs[test_size] = []
