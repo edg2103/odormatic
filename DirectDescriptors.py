@@ -4,6 +4,7 @@ import csv
 import sklearn
 import gensim
 import re
+import tqdm
 import copy
 import sklearn.cross_decomposition as cross 
 from sklearn import linear_model as lm
@@ -123,7 +124,7 @@ if test_size==1.0:
     iters = 1
 else:
     iters = 100
-for qq in range(iters):
+for qq in tqdm.tqdm(range(iters)):
     idx = np.random.permutation(Px2.shape[0])
     Px2a = Px2[idx,:]; Py2a = Py2[idx,:]#int(Py2.shape[0]/10),:]
     for j in  range(2,factors.shape[0]+1):
@@ -204,4 +205,3 @@ for qq in range(iters):
             pickle.dump({'corrs':corrs,'medians':medians,'iter':qq, 'sqmeans':sqmeans, 'mediansPvals':mediansPvals},open(filename,'wb'))
         else:
             pickle.dump({'corrs':corrs,'medians':medians,'iter':qq, 'sqmeans':sqmeans, 'mediansPvals':mediansPvals},open(filename,'wb'))
-        print(j)
