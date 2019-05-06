@@ -17,15 +17,11 @@ import corrstats
 # Set the distributional Semantic Model from which the word vectors to be used are derived -- e.g. FastText (FT0) or word2vec
 modelType = 'FT0' #'FT0' #or 'word2vec' or 'FT1' or 'FT2'
 
-try:
-  basepath = sys.argv[1]
-except:
-  basepath = '/Users/edg/Downloads/'
-  if not os.path.exists(basepath):
-    basepath = '/gsa/yktgsa/home/e/d/edg2103/code/'
-  if not os.path.exists(basepath):
-    basepath = '/Users/Elkin.Gutierrez/Desktop/code/'
-  filename = basepath+'moleculeAnalysis_results_overlap_plus_mean_2.0_'+modelType+'_expandSet_2018-07.dump'
+
+basepath = os.path.getcwd()
+sys.path.append(basepath)
+
+filename = basepath+'moleculeAnalysis_results_overlap_plus_mean_2.0_'+modelType+'_expandSet_2018-07.dump'
 
 
 # Load the Dream and Dravnieks ratings from csv files into lists
