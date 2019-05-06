@@ -35,6 +35,9 @@ Dream, DRM_mols, DRM_words = mu.load_mols_csv(basepath+'AvgOdorFeatures.csv', fi
 Px = np.array(Dream)
 Py = np.array(Dravnieks)
 
+for i in reversed(sorted(remove_inds_DRV)):
+  Py = np.delete(Py,i,1)
+
 # Preprocess descriptor labels (e.g., replace multi-word terms with single-word equivalents)
 DRM_words,DRV_words = mu.preprocess(DRM_words, DRV_words)
 
