@@ -32,6 +32,9 @@ filename = basepath+'factor_analysis_results_non_overlap2_plus_mean_'+modelType+
 Dravnieks, DRV_mols, DRV_words = mu.load_mols_csv(basepath+'Dravnieks_perception.csv', first_col=1, mol_col=0)
 Dream, DRM_mols, DRM_words = mu.load_mols_csv(basepath+'AvgOdorFeatures.csv', first_col=4)
 
+Px = np.array(Dream)
+Py = np.array(Dravnieks)
+
 # Preprocess descriptor labels (e.g., replace multi-word terms with single-word equivalents)
 DRM_words,DRV_words = mu.preprocess(DRM_words, DRV_words)
 
@@ -120,7 +123,7 @@ with open(basepath+'SingleMoleculePredictionsDravnieks0857.csv') as csvfile:
         if row[0] in DRV_mols:
             Predictions.append([float(item) for item in row[3:]])
             Pred_mols.append(row[0])
-            PredY.append(Py2[DRV_mols.index(row[0])])
+            PredY.append(Py[DRV_mols.index(row[0])])
 
 PredY = np.array(PredY)        
 PredX = np.array(Predictions)
