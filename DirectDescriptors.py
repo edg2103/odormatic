@@ -84,7 +84,7 @@ Px2 = np.vstack((Px2,Pxx2))
 Py2 = np.vstack((Py2,Pyy2))
 mols = mols + mols2
 
-medians={}; sqmeans = {}; mediansPvals = {}; corrs = {}
+medians={}; sqmeans = {}; mediansPvals = {}; corrs = {}; meansZscores = {}
 
 if test_size==1.0:
     keys = ['Semantics2','Baseline']
@@ -117,11 +117,13 @@ for key in keys:
     medians[key] = {}
     corrs[key] = {}
     mediansPvals[key] = {}
+    meansZscores[key] = {}
     for j in  range(2,factors.shape[0]+1):
         medians[key][j] = []
         mediansPvals[key][j] = []
         sqmeans[key][j] = []
         corrs[key][j] = []
+        meansZscores[key][j] = {}
 if test_size==1.0:
     iters = 1
 else:
