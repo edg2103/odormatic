@@ -84,7 +84,7 @@ Px2 = np.vstack((Px2,Pxx2))
 Py2 = np.vstack((Py2,Pyy2))
 mols = mols + mols2
 
-medians={}; sqmeans = {}; mediansPvals = {}; 
+medians={}; sqmeans = {}; mediansPvals = {}; corrs = {}
 
 if test_size==1.0:
     keys = ['Semantics2','Baseline']
