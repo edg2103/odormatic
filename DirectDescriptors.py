@@ -164,6 +164,9 @@ for qq in tqdm.tqdm(range(iters)):
         Px_train = Px_train-Px_trainmean
         Px_test = Px_test - Px_trainmean
 
+        modelY = Reg(cv=min(10, Px_train.shape[0]),max_iter=1e4,fit_intercept=True)
+        ThetaY = modelY.fit(Px_train, Py_train).coef_
+        
         key = 'Semantics2'
         hat = modelX2.predict(Px_test)
         hats[key] = copy.copy(hat)
