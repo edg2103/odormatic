@@ -17,6 +17,9 @@ import corrstats
 import mol_utils as mu
 import sys
 
+# set the size of the training and test data (as a proportion of the perceptual ratings).  If test_size=1.0, we use only distributional data to create the model.
+test_size = 0.8
+
 modelType = 'FT0' #'FT0' or 'word2vec' or 'FT1' or 'FT2'
 
 
