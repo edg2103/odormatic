@@ -18,7 +18,7 @@ import corrstats
 modelType = 'FT0' #'FT0' #or 'word2vec' or 'FT1' or 'FT2'
 
 
-basepath = os.getcwd()
+basepath = os.getcwd()+'/'
 sys.path.append(basepath)
 
 filename = basepath+'moleculeAnalysis_results_overlap_plus_mean_2.0_'+modelType+'_expandSet_2018-07.dump'
