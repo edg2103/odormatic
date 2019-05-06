@@ -94,7 +94,7 @@ for key in keys:
     medians[key] = {}
     sqmeans[key] = {}
     mediansPvals[key] = {}
-    = lm.MultiTaskElasticNetCV #MultiTaskElasticNetCV #cross.PLSCanonical #cross.PLSRegression
+Reg = lm.MultiTaskElasticNetCV #MultiTaskElasticNetCV #cross.PLSCanonical #cross.PLSRegression
 
 Sxx = Sx
 Sxx = Sxx
