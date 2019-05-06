@@ -47,7 +47,7 @@ DRM_words,DRV_words = mu.preprocess(DRM_words, DRV_words)
 remove_inds_DRV = [i for i,w in enumerate(DRV_words) if w=='---']
 
 # Load Distributional Semantic Model (word embeddings)
-model = mu.loadFT(basepath+'wiki-news-300d-1M.vec',DRV_words+DRM_words)
+model = mu.load_FT(basepath+'wiki-news-300d-1M.vec',DRV_words+DRM_words)
 
 #Collect indices of descriptors that couldn't be found in dictionary for later removal
 for i,w in enumerate(DRV_words):
