@@ -189,7 +189,6 @@ for test_size in test_sizes:
     meansSqErrReductions[key][test_size] = []
     sqmeans[key][test_size] = []
 
-corrs, medians, sqerrs, mediansSqErrReductions,meansSqErrReductions,sqmeans,mediansPvals = mu.cross_val(test_sizes,keys,Px2,Py2,PredX,PredY,)
 # Try 100 iterations of train-test splitting of data with different test sizes
 for jjj in range(100):
   for test_size in test_sizes:
