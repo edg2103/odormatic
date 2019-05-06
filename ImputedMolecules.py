@@ -22,11 +22,8 @@ modelType = 'FT0'
 try:
   basepath = sys.argv[1]
 except:
-  basepath = '/Users/edg/Downloads/'
-  if not os.path.exists(basepath):
-    basepath = '/gsa/yktgsa/home/e/d/edg2103/code/'
-  if not os.path.exists(basepath):
-    basepath = '/Users/Elkin.Gutierrez/Desktop/code/'
+  basepath = os.path.getcwd()
+sys.path.append(basepath)
 
 filename = basepath+'moleculeAnalysis_results_non_overlap2_plus_mean_2.0_'+modelType
 
