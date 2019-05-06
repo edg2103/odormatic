@@ -22,7 +22,7 @@ modelType = 'FT0' #'FT0' or 'word2vec' or 'FT1' or 'FT2'
 
 kf = mod_sel.KFold(n_splits=10)
 
-basepath = os.path.getcwd()
+basepath = os.getcwd()
 sys.path.append(basepath)
 
 filename = basepath+'factor_analysis_results_overlap_plus_mean_'+modelType+'_expandSet-2018-07.dump'        
