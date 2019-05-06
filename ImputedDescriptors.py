@@ -19,11 +19,9 @@ test_size = 1.0 # or 0.1
 
 kf = mod_sel.KFold(n_splits=10)
 
-basepath = '/Users/edg/Downloads/'
-if not os.path.exists(basepath):
-    basepath = '/gsa/yktgsa/home/e/d/edg2103/code/'
-if not os.path.exists(basepath):
-    basepath = '/Users/Elkin.Gutierrez/Desktop/code/'
+
+basepath = os.path.getcwd()
+sys.path.append(basepath)
  
 filename = basepath+'factor_analysis_results_non_overlap2_plus_mean_'+modelType+'_expandSet-2018-07.dump'        
 
