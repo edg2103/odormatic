@@ -15,17 +15,16 @@ import os
 import pickle
 import corrstats
 import mol_utils as mu
+import sys
 
 modelType = 'FT0' #'FT0' or 'word2vec' or 'FT1' or 'FT2'
 
 
 kf = mod_sel.KFold(n_splits=10)
 
-basepath = '/Users/edg/Downloads/'
-if not os.path.exists(basepath):
-    basepath = '/gsa/yktgsa/home/e/d/edg2103/code/'
-if not os.path.exists(basepath):
-    basepath = '/Users/Elkin.Gutierrez/Desktop/code/'
+basepath = os.path.getcwd()
+sys.path.append(basepath)
+
 filename = basepath+'factor_analysis_results_overlap_plus_mean_'+modelType+'_expandSet-2018-07.dump'        
 
 # Load the Dream and Dravnieks ratings from csv files into lists
