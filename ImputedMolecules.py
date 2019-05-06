@@ -22,7 +22,7 @@ modelType = 'FT0'
 try:
   basepath = sys.argv[1]
 except:
-  basepath = os.getcwd()
+  basepath = os.getcwd()+'/'
 sys.path.append(basepath)
 
 filename = basepath+'moleculeAnalysis_results_non_overlap2_plus_mean_2.0_'+modelType
