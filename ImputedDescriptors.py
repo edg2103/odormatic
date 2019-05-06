@@ -20,7 +20,7 @@ test_size = 1.0 # or 0.1
 kf = mod_sel.KFold(n_splits=10)
 
 
-basepath = os.path.getcwd()
+basepath = os.getcwd()
 sys.path.append(basepath)
  
 filename = basepath+'factor_analysis_results_non_overlap2_plus_mean_'+modelType+'_expandSet-2018-07.dump'        
