@@ -110,6 +110,10 @@ meansSqErrReductions={}
 sqerrs = {}
 corrs = {} #store the actual correlations
 
+#these keys correspond to the different ways to predict the ratings
+keys = ['Semantics2','Perceptual','Half2']
+keys+=['Baseline-'+key for key in keys]+['Baseline']
+
 # Populate dicts with keys for each prediction method
 for key in keys:
   medians[key] = {}
@@ -119,10 +123,6 @@ for key in keys:
   sqmeans[key] = {}
   meansSqErrReductions[key] = {}
   mediansSqErrReductions[key] = {}
-
-#these keys correspond to the different ways to predict the ratings
-keys = ['Semantics2','Perceptual','Half2']
-keys+=['Baseline-'+key for key in keys]+['Baseline']
 
 ################################################################################################
 # Measure performance of model that does not use any molecular perceptual rating information   #
