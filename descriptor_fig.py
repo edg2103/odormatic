@@ -7,7 +7,7 @@ import sys
 codepath = os.getcwd()+'/'
 sys.path.append(basepath)
 
-DRM_words = pickle.load(open(codepath+'DRM_words.dump'))['DRM_words']
+DRM_words = pickle.load(open(codepath+'DRM_words.dump','rb'))['DRM_words']
 
 #arrange the labels in the order contained in the ratings data
 labels = [DRM_words[i] for i in np.array([10, 16, 11, 4, 12, 17, 8, 14, 19 , 21, 7, 13, 5, 20, 3, 9, 15, 18, 6])-3]
@@ -26,12 +26,12 @@ import scipy.stats as stats
 linestyles = ['solid','dashed','--','dotted']
 
 fig, ax = plt.subplots()
-mediansZscores = pickle.load(open(codepath+'factor_analysis_results_non_overlap2_plus_mean_FT0.dump'))['mediansZscores'];
+mediansZscores = pickle.load(open(codepath+'factor_analysis_results_non_overlap2_plus_mean_FT0.dump','rb'))['mediansZscores'];
 keys1 = sorted(mediansZscores['Semantics'].keys())
 ax.plot(keys1,
     [np.abs(stats.norm.isf(np.median(mediansZscores['Semantics'][j]))) for j in keys1],
        label='ChemToPercept',linestyle=linestyles[0], linewidth=2.0, marker='o',color='blue')
-mediansZscores = pickle.load(open(codepath+'factor_analysis_results_overlap_plus_mean_1.0_58_FT0.dump'))['mediansZscores'];
+mediansZscores = pickle.load(open(codepath+'factor_analysis_results_overlap_plus_mean_1.0_58_FT0.dump','rb'))['mediansZscores'];
 ax.plot(keys1,
     [np.abs(stats.norm.isf(np.median(mediansZscores['Semantics'][j]))) for j in keys1],
        label='RatingsToPercept',linestyle=linestyles[0], linewidth=2.0, marker='o',color='red')
@@ -69,12 +69,12 @@ linestyles = ['solid','dashed','--','dotted']
 import scipy.stats as stats
 linestyles = ['solid','dashed','--','dotted']
 fig, ax = plt.subplots()
-mediansZscores = pickle.load(open(codepath+'factor_analysis_results_non_overlap2_plus_mean_FT0.dump'))['sqmeans'];
+mediansZscores = pickle.load(open(codepath+'factor_analysis_results_non_overlap2_plus_mean_FT0.dump','rb'))['sqmeans'];
 keys1 = sorted(mediansZscores['Semantics'].keys())
 ax.plot(keys1,
     [np.abs((np.mean(mediansZscores['Semantics'][j]))) for j in keys1],
        label='ChemToPercept',linestyle=linestyles[0], linewidth=2.0, marker='o',color='blue')
-mediansZscores = pickle.load(open(codepath+'factor_analysis_results_overlap_plus_mean_1.0_58_FT0.dump'))['sqmeans'];
+mediansZscores = pickle.load(open(codepath+'factor_analysis_results_overlap_plus_mean_1.0_58_FT0.dump','rb'))['sqmeans'];
 ax.plot(keys1,
     [np.abs((np.linalg.norm(mediansZscores['Semantics'][j]))/np.sqrt(len(mediansZscores['Semantics'][j]))) for j in keys1],
        label='RatingsToPercept',linestyle=linestyles[0], linewidth=2.0, marker='o',color='red')
