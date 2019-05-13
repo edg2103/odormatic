@@ -14,16 +14,13 @@ import matplotlib.pyplot as plt
 import scipy.stats as stats
 import scipy.spatial as spatial 
 import os
+import sys
 import mol_utils as mu
 
 kf = mod_sel.KFold(n_splits=10)
 
-basepath = '/Users/edg/Downloads/'
-if not os.path.exists(basepath):
-  basepath = '/gsa/yktgsa/home/e/d/edg2103/code/'
-if not os.path.exists(basepath):
-  basepath = '/Users/Elkin.Gutierrez/Desktop/code/'
-
+basepath = os.getcwd()+'/'
+sys.path.append(basepath)
 
 Dravnieks = []
 DRV_mols = []
