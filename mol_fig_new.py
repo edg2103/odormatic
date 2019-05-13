@@ -3,11 +3,10 @@ import matplotlib.pyplot as plt
 import scipy.stats as stats
 import pickle
 import numpy as np
- 
-if os.path.isdir('/Users/Elkin.Gutierrez/Desktop/code/'):
-    codepath='/Users/Elkin.Gutierrez/Desktop/code/'
-else:
-    codepath='/Users/pablo/Dropbox/Olfaction/Dario/'
+import os
+
+basepath = os.getcwd()+'/'
+sys.path.append(basepath)
  
 def pickleload(fname):
     with open(fname, 'rb') as f:
