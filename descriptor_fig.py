@@ -1,9 +1,11 @@
 from matplotlib.ticker import FuncFormatter, MaxNLocator
 import numpy as np
 import pickle; import numpy as np; import matplotlib.pyplot as plt;
+import os
 
+codepath = os.getcwd()+'/'
+sys.path.append(basepath)
 
-codepath = '/Users/Elkin.Gutierrez/Desktop/code/'
 DRM_words = pickle.load(open(codepath+'DRM_words.dump'))['DRM_words']
 
 #arrange the labels in the order contained in the ratings data
