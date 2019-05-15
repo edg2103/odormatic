@@ -277,6 +277,6 @@ for fam in fams+['all']:
 for key in auc_by_fam.keys():
     print(key+''+' '*(20-len(key))+str(round(auc_by_fam[key],4))+'\t'+str(round(pval_by_fam[key],4)))
 
-pval = bootstrap_t_test()
+#pval = bootstrap_t_test()
 pickle.dump({'rocs2':rocs2,'mols2':mols2,'realnames':realnames,'roc_auc':roc_auc,'auc_by_fam':auc_by_fam,'top_desc':topdesc3,'top_desc_IUPAC':topdesc2},open(basepath+'AUC_results.pickle','wb'))
 
