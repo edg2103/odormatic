@@ -16,7 +16,7 @@ import mol_utils as mu
 import sys
 
 # set the size of the training and test data (as a proportion of the perceptual ratings).  If test_size=1.0, we use only distributional data to create the model.
-test_size = 0.1
+test_size = 1.0
 
 modelType = 'FT0' #FT0,FT1,FT2,word2vec
 
