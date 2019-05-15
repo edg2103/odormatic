@@ -38,7 +38,7 @@ order = 'family' #if 'family', order by family. if 'top', order by top ROC AUC
 basepath = os.getcwd()+'/'
 
 loadmodel = False
-mdict = pickle.load(open(basepath+'AUC_figure_input.pickle','rb'));DRV_words=mdict['DRV_words'];DRM_words=mdict['DRM_words'];Reg=mdict['Reg'];Sxx2=mdict['Sxx2'];model=mdict['model']
+mdict = pickle.load(open(basepath+'aux/AUC_figure_input.pickle','rb'));DRV_words=mdict['DRV_words'];DRM_words=mdict['DRM_words'];Reg=mdict['Reg'];Sxx2=mdict['Sxx2'];model=mdict['model']
 
 def sample(data):
     sample = [random.choice(data) for _ in range(len(data))]
@@ -75,7 +75,7 @@ def auc_calc(y_pred, y_test):
    
 F4 = []
 F4_mols = []
-#with open(basepath+'Preds_molecules_Fig4_modified.csv') as csvfile:
+#with open(basepath+'aux/Preds_molecules_Fig4_modified.csv') as csvfile:
 with open(basepath+'Extramolpreds2.csv') as csvfile: #'Preds_molecules_Fig4_modified.csv') as csvfile:
   reader = csv.reader(csvfile)
   for i,row in enumerate(reader):
@@ -119,7 +119,7 @@ for i in range(F4zz.shape[0]):
   top = sorted(range(len(lst)), key=lambda k: lst[k])
   topdesc2[F4_mols[i]] = [F4_words2[j] for j in top]
 
-reader = csv.reader(open(basepath+'fig4_descriptor_ratings_new.csv'))
+reader = csv.reader(open(basepath+'aux/fig4_descriptor_ratings_new.csv'))
 F4_ratings = {mol:{} for mol in F4_mols}
 for i,row in enumerate(reader):
   if i==0:
@@ -209,7 +209,7 @@ for i,mol in enumerate(F4_mols):
 
 pval = scipy.stats.kstest([mann_whitney_pvals[key] for key in mann_whitney_pvals.keys() if not(np.isnan(mann_whitney_pvals[key]))],'uniform', args=(0,1))
 
-reader = csv.reader(open(basepath+'homologous series descriptors.csv'))
+reader = csv.reader(open(basepath+'aux/homologous series descriptors.csv'))
 molnamedict = {row[2]:row[0] for i,row in enumerate(reader) if i>0}
 mols2 = [key for key in sorted(roc_auc.keys())]
 realnames = [molnamedict[mol] for mol in mols2]
