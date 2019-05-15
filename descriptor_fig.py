@@ -29,12 +29,12 @@ def format_fn(tick_val, tick_pos):
 #
 ###########################################################################
 
-mediansZscores = mol_utils.pickleload(codepath+'factor_analysis_results_overlap_plus_mean_FT0_expandSet.dump')['mediansZscores'];
+mediansZscores = mol_utils.pickleload(codepath+'factor_analysis_results_overlap_plus_mean_FT0_2019.dump')['mediansZscores'];
 keys1 = sorted(mediansZscores['Semantics2'].keys())
 x1 = np.array(keys1) 
 y1 = np.array([np.abs(stats.norm.isf(np.median(mediansZscores['Semantics2'][j]))) for j in keys1])
 
-mediansZscores = mol_utils.pickleload(codepath+'factor_analysis_results_non_overlap2_plus_mean_FT0_expandSet.dump')['mediansZscores'];
+mediansZscores = mol_utils.pickleload(codepath+'factor_analysis_results_non_overlap2_plus_mean_FT0_2019.dump')['mediansZscores'];
 keys2 = sorted(mediansZscores['Semantics2'].keys())
 x2 = np.array(keys2) 
 y2 = np.array([np.abs(stats.norm.isf(np.median(mediansZscores['Semantics2'][j]))) for j in keys2])
