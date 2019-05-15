@@ -32,7 +32,7 @@ sys.path.append(basepath)
 filename = basepath+'moleculeAnalysis_results_non_overlap2_plus_mean_2.0_'+modelType
 
 filename = filename + '_expandSet'
-filename = filename + '2018-07.dump'
+filename = filename + '_2018-07.dump'
 
 # Load the Dream and Dravnieks ratings from csv files into lists
 
