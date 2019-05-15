@@ -202,10 +202,7 @@ for qq in tqdm.tqdm(range(iters)):
             sqmeans[key2][j].append(mu.sqmean(corrs[key][j]))
             mediansPvals[key][j].append(np.median([mu.nanreplace(corrstats.dependent_corr(jj,kk,ll,Py_trainmean.size,twotailed=False)[1]) 
                                                        for jj,kk,ll in zip(corrs[key][j],corrs['Baseline'][j],corrs[key2][j])]))
-            
-            scores[key][j].append(np.mean([mu.nanreplace(corrstats.dependent_corr(jj,kk,ll,Py_trainmean.size,twotailed=False)[1]) 
-                                                       for jj,kk,ll in zip(corrs[key][j],corrs['Baseline'][j],corrs[key2][j])]))
-       # print [np.median(corrs),np.median(corrs1),np.median(corrs2),np.median(corrs3)]#,np.median(corrs1)])) #+'\t'+str(np.mean(corrs))+'\t'+str(err)
+        # print [np.median(corrs),np.median(corrs1),np.median(corrs2),np.median(corrs3)]#,np.median(corrs1)])) #+'\t'+str(np.mean(corrs))+'\t'+str(err)
         if test_size<1.0:
 
             pickle.dump({'corrs':corrs,'medians':medians,'iter':qq, 'sqmeans':sqmeans, 'mediansPvals':mediansPvals},open(filename,'wb'))
