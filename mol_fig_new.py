@@ -4,21 +4,13 @@ import scipy.stats as stats
 import pickle
 import numpy as np
 import os
+import mol_utils as mu
 
 basepath = os.getcwd()+'/'
 sys.path.append(basepath)
  
-def pickleload(fname):
-    with open(fname, 'rb') as f:
-        try:
-            u = pickle._Unpickler(f)    
-            u.econding = 'latin1'
-            p = u.load()
-            return p
-        except AttributeError:
-            return pickle.load(open(fname))
  
-mediansPvals = pickleload(codepath+'moleculeAnalysis_results_overlap_plus_mean_2.0_FT0_expandSet.dump')['mediansZscores']
+mediansPvals = mu.pickleload(codepath+'moleculeAnalysis_results_overlap_plus_mean_2.0_FT0_expandSet.dump')['mediansZscores']
 markers=['s','<','o']; #markerfacecolors = ['white','black','lightgrey']
 linestyles=['solid','solid','solid']#'dashed','-.']
 fig, ax = plt.subplots()
@@ -64,7 +56,7 @@ plt.savefig(codepath+'mol_overlap_FT0.png',dpi=300)
 plt.savefig(codepath+'mol_overlap_FT0.eps',dpi=300)
  
  
-mediansPvals = pickleload(codepath+'moleculeAnalysis_results_non_overlap2_plus_mean_2.0_FT0_expandSet.dump')['mediansZscores']
+mediansPvals = mu.pickleload(codepath+'moleculeAnalysis_results_non_overlap2_plus_mean_2.0_FT0_expandSet.dump')['mediansZscores']
 markers=['s','<','o']; #markerfacecolors = ['white','black','lightgrey']
 linestyles=['solid','solid','solid']#'dashed','-.']
 fig, ax = plt.subplots()
@@ -111,7 +103,7 @@ plt.savefig(codepath+'mol_non_overlap2_FT0.png',dpi=300)
 plt.savefig(codepath+'mol_non_overlap2_FT0.eps',dpi=300)
 
 
-mediansPvals = pickleload(codepath+'moleculeAnalysis_results_overlap_plus_mean_2.0_FT0_expandSet.dump')['sqmeans']
+mediansPvals = mu.pickleload(codepath+'moleculeAnalysis_results_overlap_plus_mean_2.0_FT0_expandSet.dump')['sqmeans']
 markers=['s','<','o',None]; #markerfacecolors = ['white','black','lightgrey']
 linestyles=['solid','solid','solid','dashed']#,'-.']
 fig, ax = plt.subplots()
@@ -160,7 +152,7 @@ plt.savefig(codepath+'correls_mol_overlap_FT0.png',dpi=300)
 plt.savefig(codepath+'correls_mol_overlap_FT0.eps',dpi=300)
  
  
-mediansPvals = pickleload(codepath+'moleculeAnalysis_results_non_overlap2_plus_mean_2.0_FT0_expandSet.dump')['sqmeans']
+mediansPvals = mu.pickleload(codepath+'moleculeAnalysis_results_non_overlap2_plus_mean_2.0_FT0_expandSet.dump')['sqmeans']
 markers=['s','<','o',None]; #markerfacecolors = ['white','black','lightgrey']
 linestyles=['solid','solid','solid','dashed']#,'-.']
 fig, ax = plt.subplots()
