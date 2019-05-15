@@ -3,6 +3,7 @@ import numpy as np
 import pickle; import numpy as np; import matplotlib.pyplot as plt;
 import os
 import sys
+import mol_utils
 
 codepath = os.getcwd()+'/'
 sys.path.append(codepath)
@@ -26,12 +27,12 @@ import scipy.stats as stats
 linestyles = ['solid','dashed','--','dotted']
 
 fig, ax = plt.subplots()
-mediansZscores = pickle.load(open(codepath+'factor_analysis_results_non_overlap2_plus_mean_FT0.dump','rb'))['mediansZscores'];
+mediansZscores = mol_utils.pickleload(codepath+'factor_analysis_results_non_overlap2_plus_mean_FT0.dump')['mediansZscores'];
 keys1 = sorted(mediansZscores['Semantics'].keys())
 ax.plot(keys1,
     [np.abs(stats.norm.isf(np.median(mediansZscores['Semantics'][j]))) for j in keys1],
        label='ChemToPercept',linestyle=linestyles[0], linewidth=2.0, marker='o',color='blue')
-mediansZscores = pickle.load(open(codepath+'factor_analysis_results_overlap_plus_mean_1.0_58_FT0.dump','rb'))['mediansZscores'];
+mediansZscores = mol_utils.pickleload(codepath+'factor_analysis_results_overlap_plus_mean_1.0_58_FT0.dump'))['mediansZscores'];
 ax.plot(keys1,
     [np.abs(stats.norm.isf(np.median(mediansZscores['Semantics'][j]))) for j in keys1],
        label='RatingsToPercept',linestyle=linestyles[0], linewidth=2.0, marker='o',color='red')
