@@ -232,7 +232,10 @@ def preprocess(DRM_words,DRV_words,expandSet=True):
 
 def pickleload(filename):
   with open(filename, 'rb') as f:
-    u = pickle._Unpickler(f)
-    u.encoding = 'latin1'
-    p = u.load()
-    return p
+    try:
+      u = pickle._Unpickler(f)
+      u.encoding = 'latin1'
+      p = u.load()
+      return p
+    except AttributeError:
+      return pickle.load(open(filename))
