@@ -76,7 +76,7 @@ def auc_calc(y_pred, y_test):
 F4 = []
 F4_mols = []
 #with open(basepath+'aux/Preds_molecules_Fig4_modified.csv') as csvfile:
-with open(basepath+'Extramolpreds2.csv') as csvfile: #'Preds_molecules_Fig4_modified.csv') as csvfile:
+with open(basepath+'aux/Extramolpreds2.csv') as csvfile: #'Preds_molecules_Fig4_modified.csv') as csvfile:
   reader = csv.reader(csvfile)
   for i,row in enumerate(reader):
     if i==0:
