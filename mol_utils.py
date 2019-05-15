@@ -70,6 +70,8 @@ def load_FT(filename, words):
 
 def corrcoef(arr1,arr2):
   #Wrapper for numpy correlation coefficient function
+  if (np.sum(np.abs(arr1))==0) or (np.sum(np.abs(arr2))==0):
+      return 0
   return np.corrcoef(arr1,arr2)[1,0]
 
 def sqmean(vector):
