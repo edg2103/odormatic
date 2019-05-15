@@ -322,6 +322,6 @@ for train_index, test_index in loo.split(Px2):
 #Get the per-descriptor correlations
 corr2 = []
 for j in range(hat.shape[0]):
-    corr2.append(np.corrcoef(hat[j,:],Py_test[j,:])[1,0])
+    corr2.append(np.corrcoef(hat[j,:],Py2[j,:])[1,0])
 
 sorted_correls_DRV_mols = [x for (y,x) in sorted(zip(corr2,mols))]
