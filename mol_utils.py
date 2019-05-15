@@ -227,3 +227,10 @@ def preprocess(DRM_words,DRV_words,expandSet=True):
   DRM_words = [w.lower() for w in DRM_words]
 
   return DRM_words, DRV_words
+
+def pickleload(filename):
+  with open(filename, 'rb') as f:
+    u = pickle._Unpickler(f)
+    u.encoding = 'latin1'
+    p = u.load()
+    return p
