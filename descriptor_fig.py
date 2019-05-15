@@ -5,7 +5,7 @@ import os
 import sys
 
 codepath = os.getcwd()+'/'
-sys.path.append(basepath)
+sys.path.append(codepath)
 
 DRM_words = pickle.load(open(codepath+'DRM_words.dump','rb'))['DRM_words']
 
