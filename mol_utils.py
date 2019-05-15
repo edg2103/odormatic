@@ -237,5 +237,8 @@ def pickleload(filename):
       u.encoding = 'latin1'
       p = u.load()
       return p
+    except UnicodeDecodeError:
+      try:
+        return pickle.load(open(filename,'rb'),encoding='latin1')
     except AttributeError:
       return pickle.load(open(filename))
