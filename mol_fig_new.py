@@ -102,7 +102,7 @@ plt.ylabel('Z-score');
 plt.savefig(codepath+'mol_non_overlap2_FT0.png',dpi=300)
 plt.savefig(codepath+'mol_non_overlap2_FT0.eps',dpi=300)
 
-
+"""
 mediansPvals = mu.pickleload(codepath+'moleculeAnalysis_results_overlap_plus_mean_2.0_FT0_expandSet.dump')['sqmeans']
 markers=['s','<','o',None]; #markerfacecolors = ['white','black','lightgrey']
 linestyles=['solid','solid','solid','dashed']#,'-.']
@@ -200,3 +200,5 @@ plt.ylabel('Correlation');
 #plt.show();
 plt.savefig(codepath+'correls_mol_non_overlap2_FT0.png',dpi=300)
 plt.savefig(codepath+'correls_mol_non_overlap2_FT0.eps',dpi=300)
+
+"""
