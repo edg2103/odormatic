@@ -113,11 +113,11 @@ for style,key,marker in zip(linestyles, ['Semantics2','Perceptual','Half2','Base
     x = [58-i*58 for i in keys0]
     y = [(np.mean(mediansPvals[key][j])) for j in keys0]
     if key=='Perceptual':
-        key2 = 'ImpRat'
+        key2 = 'DirRat'
     elif key in ['Half','Half2']:
         key2 = 'Mixed'
     elif key in ['Semantics','Semantics2']:
-        key2 = 'ImpSem'
+        key2 = 'DirSem'
     else:
         key2 = key
     # do the plotting.  need to plot baseline separately bc it's dashed with no markers
@@ -162,11 +162,11 @@ for style,key,marker in zip(linestyles, ['Semantics2','Perceptual','Half2','Base
     x = [70-i*70 for i in keys0]
     y = [(np.mean(mediansPvals[key][j])) for j in keys0]
     if key=='Perceptual':
-        key2 = 'DirRat'
+        key2 = 'ImpRat'
     elif key in ['Half','Half2']:
         key2 = 'Mixed'
     elif key in ['Semantics','Semantics2']:
-        key2 = 'DirSem'
+        key2 = 'ImpSem'
     else:
         key2 = key
     # do the plotting.  need to plot baseline separately bc it's dashed with no markers
