@@ -24,7 +24,7 @@ sys.path.append(basepath)
 
 Dravnieks = []
 DRV_mols = []
-with open(basepath+'Dravnieks_perception.csv') as csvfile:
+with open(basepath+'aux/Dravnieks_perception.csv') as csvfile:
   reader = csv.reader(csvfile)
   for i,row in enumerate(reader):
     if i==0:
@@ -35,7 +35,7 @@ with open(basepath+'Dravnieks_perception.csv') as csvfile:
 
 Dream = []
 DRM_mols = []
-with open(basepath+'AvgOdorFeatures.csv') as csvfile:
+with open(basepath+'aux/AvgOdorFeatures.csv') as csvfile:
   reader = csv.reader(csvfile)
   for i,row in enumerate(reader):
     if i==0:
@@ -199,7 +199,7 @@ plt.tight_layout(True)
 plt.show()
 
 chems = {}
-with open(basepath+'CID_to_chemical.csv') as csvfile:
+with open(basepath+'aux/CID_to_chemical.csv') as csvfile:
   reader = csv.reader(csvfile)
   for i,row in enumerate(reader):
       chems[row[0]] = row[1]
