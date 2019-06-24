@@ -98,13 +98,14 @@ ThetaX2 = modelX2.fit(Sxx2.T,Syy2.T).coef_
 Predictions = []
 Pred_mols = []
 PredY = []
+Py = np.array(Dravnieks)
 with open(basepath+'SingleMoleculePredictionsDravnieks0857.csv') as csvfile:
   reader = csv.reader(csvfile)
   for i,row in enumerate(reader):
     if row[0] in DRV_mols:
       Predictions.append([float(item) for item in row[3:]])
       Pred_mols.append(row[0])
-      PredY.append(Py2[DRV_mols.index(row[0])])
+      PredY.append(Py[DRV_mols.index(row[0])])
 
 PredY = np.array(PredY)        
 PredX = np.array(Predictions)
