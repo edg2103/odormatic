@@ -99,6 +99,8 @@ Predictions = []
 Pred_mols = []
 PredY = []
 Py = np.array(Dravnieks)
+for i in reversed(sorted(remove_inds_DRV)):
+  Py = np.delete(Py,i,1)
 with open(basepath+'SingleMoleculePredictionsDravnieks0857.csv') as csvfile:
   reader = csv.reader(csvfile)
   for i,row in enumerate(reader):
