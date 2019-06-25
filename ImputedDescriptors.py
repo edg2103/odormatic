@@ -35,18 +35,17 @@ Dream, DRM_mols, DRM_words = mu.load_mols_csv(basepath+'AvgOdorFeatures.csv', fi
 Px = np.array(Dream)
 Py = np.array(Dravnieks)
 
-for i in reversed(sorted(remove_inds_DRV)):
-  Py = np.delete(Py,i,1)
-
 remove_inds_DRV = [i for i,w in enumerate(DRV_words) if w=='---']
 
 # Preprocess descriptor labels (e.g., replace multi-word terms with single-word equivalents)
 DRM_words,DRV_words = mu.preprocess(DRM_words, DRV_words)
 
-remove_inds_DRV = [i for i,w in enumerate(DRV_words) if w=='---']
 DRV_words = [w.lower() for w in DRV_words]
 DRM_words = [w.lower() for w in DRM_words]
-        
+
+for i in reversed(sorted(remove_inds_DRV)):
+  Py = np.delete(Py,i,1)
+
 # Load Distributional Semantic Model (word embeddings)
 model = mu.load_FT(basepath+'wiki-news-300d-1M.vec',DRV_words+DRM_words)
 
