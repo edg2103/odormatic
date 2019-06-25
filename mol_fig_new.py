@@ -9,8 +9,11 @@ import mol_utils as mu
 basepath = os.getcwd()+'/'
 sys.path.append(basepath)
  
- 
-mediansPvals = mu.pickleload(codepath+'moleculeAnalysis_results_overlap_plus_mean_2.0_FT0_expandSet.dump')['mediansZscores']
+
+try:
+  mediansPvals = mu.pickleload(codepath+'moleculeAnalysis_results_overlap_plus_mean_2.0_FT0_expandSet.dump')['mediansZscores']
+except:
+  mediansPvals = mu.pickleload(codepath+'moleculeAnalysis_results_overlap_plus_mean_2.0_FT0_expandSet.dump')['mediansPvals']
 markers=['s','<','o']; #markerfacecolors = ['white','black','lightgrey']
 linestyles=['solid','solid','solid']#'dashed','-.']
 fig, ax = plt.subplots()
