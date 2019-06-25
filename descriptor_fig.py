@@ -15,7 +15,7 @@ codepath = os.getcwd()+'/'
 sys.path.append(codepath)
 
 
-DRM_words = pickle.load(open(codepath+'DRM_words.dump','rb'))['DRM_words']
+DRM_words = mol_utils.pickleload(codepath+'DRM_words.dump')['DRM_words']
 labels = [DRM_words[i] for i in np.array([10, 16, 11, 4, 12, 17, 8, 14, 19 , 21, 7, 13, 5, 20, 3, 9, 15, 18, 6])-3]
 def format_fn(tick_val, tick_pos):
     if int(tick_val)<len(labels):
