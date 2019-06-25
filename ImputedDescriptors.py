@@ -12,8 +12,9 @@ import matplotlib.pyplot as plt
 import scipy.stats as stats
 import os
 import pickle
-import mol_utils as mu
+import corrstats
 import sys
+import mol_utils as mu
 
 # set the size of the training and test data (as a proportion of the perceptual ratings).  If test_size=1.0, we use only distributional data to create the model.
 test_size = 1.0
