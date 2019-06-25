@@ -17,21 +17,13 @@ import matplotlib.pyplot as plt
 import scipy.stats as stats
 import os
 import pickle
+import mol_utils
 
 basepath = os.getcwd()+'/'
 sys.path.append(basepath)
 
-def pickleload(fname):
-    with open(fname, 'rb') as f:
-        try:
-            u = pickle._Unpickler(f)    
-            u.econding = 'latin1'
-            p = u.load()
-            return p
-        except AttributeError:
-            return pickle.load(open(fname))
 
-v = pickleload(open(basepath+'aux/horizontal_barchart_data.dump'))
+v = mol_utils.pickleload(basepath+'aux/horizontal_barchart_data.dump')
 
 
 corr = v['corr']
