@@ -56,7 +56,7 @@ plt.savefig(codepath+'mol_overlap_FT0.png',dpi=300)
 plt.savefig(codepath+'mol_overlap_FT0.eps',dpi=300)
  
  
-mediansPvals = mu.pickleload(codepath+'moleculeAnalysis_results_non_overlap2_plus_mean_2.0_FT0_expandSet.dump')['mediansZscores']
+mediansPvals = mu.pickleload(codepath+'moleculeAnalysis_results_non_overlap2_plus_mean_2.0_FT0_expandSet.dump')['mediansPvals']
 markers=['s','<','o']; #markerfacecolors = ['white','black','lightgrey']
 linestyles=['solid','solid','solid']#'dashed','-.']
 fig, ax = plt.subplots()
