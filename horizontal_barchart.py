@@ -2,7 +2,6 @@
 """
 Created on Wed Nov 15 14:34:46 2017
 
-@author: Elkin.Gutierrez
 """
 import pandas as pd
 import numpy as np
@@ -19,9 +18,11 @@ import scipy.stats as stats
 import os
 import pickle
 
-basepath = '/Users/Elkin.Gutierrez/Desktop/Code'
+basepath = os.getcwd()+'/'
+sys.path.append(basepath)
 
-v = pickle.load(open(basepath+'/horizontal_barchart_data.dump'))
+
+v = pickle.load(open(basepath+'aux/horizontal_barchart_data.dump'))
 
 
 corr = v['corr']
