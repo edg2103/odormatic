@@ -26,7 +26,7 @@ kf = mod_sel.KFold(n_splits=10)
 basepath = os.getcwd()+'/'
 sys.path.append(basepath)
  
-filename = basepath+'factor_analysis_results_non_overlap2_plus_mean_'+modelType+'_2019.dump'        
+filename = basepath+'factor_analysis_results_non_overlap2_plus_mean_'+modelType+'.dump'        
 
 # Load the Dream and Dravnieks ratings from csv files into lists
 Dravnieks, DRV_mols, DRV_words = mu.load_mols_csv(basepath+'Dravnieks_perception.csv', first_col=1, mol_col=0)
