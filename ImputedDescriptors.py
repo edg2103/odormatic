@@ -43,8 +43,6 @@ DRM_words,DRV_words = mu.preprocess(DRM_words, DRV_words)
 DRV_words = [w.lower() for w in DRV_words]
 DRM_words = [w.lower() for w in DRM_words]
 
-for i in reversed(sorted(remove_inds_DRV)):
-  Py = np.delete(Py,i,1)
 
 # Load Distributional Semantic Model (word embeddings)
 model = mu.load_FT(basepath+'wiki-news-300d-1M.vec',DRV_words+DRM_words)
@@ -121,6 +119,9 @@ for key in keys:
 Predictions = []
 Pred_mols = []
 PredY = []
+Py = np.array(Dravnieks)
+for i in reversed(sorted(remove_inds_DRV)):
+  Py = np.delete(Py,i,1)
 with open(basepath+'SingleMoleculePredictionsDravnieks0857.csv') as csvfile:
     reader = csv.reader(csvfile)
     for i,row in enumerate(reader):
