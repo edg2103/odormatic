@@ -208,7 +208,7 @@ for jjj in range(100):
       sqerrs[key][test_size] = []
     Px_train, Px_test, Py_train, Py_test = mod_sel.train_test_split(PredX,PredY, test_size=test_size)
     Py_trainmean = np.mean(Py_train,0)
-    Px_trainmean = 0#np.mean(Px_train,0)
+    Px_trainmean = np.mean(Px_train,0)
     Py_train = Py_train-Py_trainmean
     Py_test = Py_test
     Px_train = Px_train-Px_trainmean
