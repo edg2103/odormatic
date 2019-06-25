@@ -21,8 +21,17 @@ import pickle
 basepath = os.getcwd()+'/'
 sys.path.append(basepath)
 
+def pickleload(fname):
+    with open(fname, 'rb') as f:
+        try:
+            u = pickle._Unpickler(f)    
+            u.econding = 'latin1'
+            p = u.load()
+            return p
+        except AttributeError:
+            return pickle.load(open(fname))
 
-v = pickle.load(open(basepath+'aux/horizontal_barchart_data.dump'))
+v = pickleload(open(basepath+'aux/horizontal_barchart_data.dump'))
 
 
 corr = v['corr']
