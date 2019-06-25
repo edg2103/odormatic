@@ -25,7 +25,7 @@ modelType = 'FT0' #'FT0' #or 'word2vec' or 'FT1' or 'FT2'
 basepath = os.getcwd()+'/'
 sys.path.append(basepath)
 
-filename = basepath+'moleculeAnalysis_results_overlap_plus_mean_2.0_'+modelType+'_expandSet_2018-07.dump'
+filename = basepath+'moleculeAnalysis_results_overlap_plus_mean_2.0_'+modelType+'_expandSet.dump'
 
 
 # Load the Dream and Dravnieks ratings from csv files into lists
