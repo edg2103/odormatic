@@ -89,7 +89,7 @@ F4 = np.array(F4)
 
 F4_words = []
 
-for line in open(basepath+'fig4_descriptors.txt','r').readlines():
+for line in open(basepath+'aux/fig4_descriptors.txt','r').readlines():
   if len(line.strip().split())==1:
     F4_words.append(line.strip())
 
