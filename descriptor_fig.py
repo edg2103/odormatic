@@ -40,6 +40,8 @@ keys2 = sorted(mediansZscores['Semantics2'].keys())
 x2 = np.array(keys2) 
 y2 = np.array([np.abs(stats.norm.isf(np.median(mediansZscores['Semantics2'][j]))) for j in keys2])
 
+markers=['s','<','o']; #markerfacecolors = ['white','black','lightgrey']
+linestyles=['solid','solid','solid']#'dashed','-.']
 
 fig, ax = plt.subplots()
 ax.plot(x1,y1,label='DirSem',linestyle=linestyles[0], linewidth=2.0, marker='o',color='black')
