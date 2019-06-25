@@ -38,6 +38,8 @@ Py = np.array(Dravnieks)
 for i in reversed(sorted(remove_inds_DRV)):
   Py = np.delete(Py,i,1)
 
+remove_inds_DRV = [i for i,w in enumerate(DRV_words) if w=='---']
+
 # Preprocess descriptor labels (e.g., replace multi-word terms with single-word equivalents)
 DRM_words,DRV_words = mu.preprocess(DRM_words, DRV_words)
 
