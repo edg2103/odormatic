@@ -1,6 +1,6 @@
 # odormatic
 
-Python scripts to generate the findings in Gutierrez, Durandhar, Meyer, and Cecchi (2018), along with some of the accompanying figures.
+Python 3+ scripts to generate the findings in Gutierrez, Durandhar, Meyer, and Cecchi (2018), along with some of the accompanying figures.
 
 Predictions are generated in four different scripts.  Two of the scripts are for the Direct models (DirSem, DirRat, DirMix in the text) and two of the scripts are for the Imputed models (ImpSem, ImpRat, ImpMix in the text).
 
@@ -10,6 +10,8 @@ DirectDescriptors.py and ImputedDescriptors.py show the effect of increasing the
 
 
 **List of files:**
+
+*wiki-news-300.vec * due to its size, needs to be downloadeds separately (url indicated in scripts)
 
 *mol_utils.py:* script with supporting utilities used by other scripts.
 
